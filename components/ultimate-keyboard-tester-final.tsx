@@ -24,7 +24,6 @@ import confetti from 'canvas-confetti'
 
 // Correct type declaration for canvas-confetti
 declare module 'canvas-confetti' {
-
   interface Options {
     particleCount?: number;
     angle?: number;
@@ -39,15 +38,18 @@ declare module 'canvas-confetti' {
       y?: number;
     };
     colors?: string[];
-    shapes?: Shape[];
+    shapes?: Shape[]; // Use the Shape type from @types/canvas-confetti
     scalar?: number;
     zIndex?: number;
     disableForReducedMotion?: boolean;
   }
 
   function confetti(options?: Options): Promise<null>;
-  namespace confetti {}
+  namespace confetti {
+    function create(canvas: HTMLCanvasElement, options?: Options): (options?: Options) => Promise<null>;
+  }
 }
+
 
 const LAYOUTS: { [key: string]: number } = {
   "100%": 101,
@@ -467,7 +469,7 @@ export default function UltimateKeyboardTester() {
                 What is this website? 🤔
               </AccordionTrigger>
               <AccordionContent className="text-gray-300">
-                This Ultimate Keyboard Tester is a fun and interactive tool to test your keyboard's functionality! 🎹✨ It helps you check for stuck keys, double presses, and even simultaneous key presses. Perfect for gamers, programmers, and anyone who loves their keyboard! 🖥️💻
+                This Ultimate Keyboard Tester is a fun and interactive tool to test your keyboard&apos;s functionality! 🎹✨ It helps you check for stuck keys, double presses, and even simultaneous key presses. Perfect for gamers, programmers, and anyone who loves their keyboard! 🖥️💻
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="tech-stack">
@@ -520,7 +522,7 @@ export default function UltimateKeyboardTester() {
               <Sparkles className="w-16 h-16 mx-auto mb-4 text-yellow-400" />
               <h2 className="text-3xl font-bold mb-4 text-center text-white">Congratulations! 🎉</h2>
               <p className="text-xl mb-6 text-center text-gray-300">
-                You've pressed all the keys on the {layout} keyboard! You're a true keyboard master! 🏆
+                You&apos;ve pressed all the keys on the {layout} keyboard! You&apos;re a true keyboard master! 🏆
               </p>
               <div className="flex justify-center items-center mb-6">
                 <Award className="w-8 h-8 mr-2 text-green-500" />
