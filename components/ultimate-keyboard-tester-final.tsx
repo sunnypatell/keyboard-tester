@@ -38,16 +38,18 @@ declare module 'canvas-confetti' {
       y?: number;
     };
     colors?: string[];
-    shapes?: Shape[]; // Use the Shape type from @types/canvas-confetti
+    shapes?: Shape[]; // Shape is defined in @types/canvas-confetti
     scalar?: number;
     zIndex?: number;
     disableForReducedMotion?: boolean;
   }
 
-  function confetti(options?: Options): Promise<null>;
-  namespace confetti {
-    function create(canvas: HTMLCanvasElement, options?: Options): (options?: Options) => Promise<null>;
+  interface ConfettiFunction {
+    (options?: Options): Promise<null>;
+    create(canvas: HTMLCanvasElement, options?: Options): (options?: Options) => Promise<null>;
   }
+
+  const confetti: ConfettiFunction;
 }
 
 
@@ -131,7 +133,7 @@ export default function UltimateKeyboardTester() {
   const [activeTab, setActiveTab] = useState<string>("visual")
   const [typedText, setTypedText] = useState<string>("")
   const [errors, setErrors] = useState<number>(0)
-  const [keyPressTimestamps, setKeyPressTimestamps] = useState<{ [key: string]: number }>({})
+  const [, setKeyPressTimestamps] = useState<{ [key: string]: number }>({})
   const textInputRef = useRef<HTMLTextAreaElement>(null)
 
   const handleKeyPress = useCallback((key: string) => {
