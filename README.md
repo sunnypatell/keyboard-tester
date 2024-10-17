@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ultimate Keyboard Tester
+
+A modern, interactive keyboard tester built with React and Next.js. Test your keyboard's functionality with style!
+
+## Features
+
+- Real-time key detection
+- Multiple keyboard layouts (100%, TKL, 75%, 65%, 60%)
+- Visual feedback for key presses:
+  - Green: Normal press
+  - Yellow: Double press detection
+  - Blue: Key held down
+  - Purple: Simultaneous key press
+- Text input mode with WPM and accuracy tracking
+- Responsive design (best viewed on desktop/laptop)
+- Export test results as JSON
+
+## Tech Stack
+
+- React
+- Next.js 13
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Shadcn UI
+- Lucide Icons
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v14 or later)
+- npm or yarn
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository: `git clone https://github.com/sunnypatell/keyboard-tester.git`
+2. Install dependencies: `npm install` or `yarn install`
+3. Run the deployment server: `npm run dev`
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Usage
 
-## Learn More
+- Select a keyboard layout from the dropdown menu
+- Press keys on your physical keyboard to see them highlighted on the virtual keyboard
+- Switch to the Text Input tab to test typing speed and accuracy
+- Use the Export Stats button to download your test results
 
-To learn more about Next.js, take a look at the following resources:
+## Known Issues
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Mobile support is bad; best viewed on desktop or laptop
+- Some browser-specific key events may not be captured correctly
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Future Improvements
 
-## Deploy on Vercel
+- Add more keyboard layouts
+- Implement custom theme options
+- Make a version for mobile only
+- Add more detailed analytics for key press patterns
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Acknowledgments
+
+- Inspired by the need for a more modern and feature-rich keyboard tester
+- Thanks to the creators and maintainers of the libraries used in this project
